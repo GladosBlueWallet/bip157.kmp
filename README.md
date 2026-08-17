@@ -9,14 +9,14 @@ This package implements **client-side filter sync** — not GCS construction, no
 ## Example
 
 ```kotlin
-import org.bitcoin.kmp.bip157.bytesToHex
-import org.bitcoin.kmp.bip157.createFilterSync
-import org.bitcoin.kmp.bip157.decodeGetCFilters
-import org.bitcoin.kmp.bip157.encodeGetCFilters
-import org.bitcoin.kmp.bip157.hexToBytes
-import org.bitcoin.kmp.bip157.BlockHeaderTip
-import org.bitcoin.kmp.bip157.GetCFilters
-import org.bitcoin.kmp.bip157.SyncInput
+import io.bluewallet.bip157.bytesToHex
+import io.bluewallet.bip157.createFilterSync
+import io.bluewallet.bip157.decodeGetCFilters
+import io.bluewallet.bip157.encodeGetCFilters
+import io.bluewallet.bip157.hexToBytes
+import io.bluewallet.bip157.BlockHeaderTip
+import io.bluewallet.bip157.GetCFilters
+import io.bluewallet.bip157.SyncInput
 
 // Wire round-trip (hand-built Core-layout hex; stop hash is internal byte order).
 val wireHex =
@@ -42,7 +42,7 @@ Filter verification and header chaining use in-package `filterHash` / `filterHea
 Peers must advertise `NODE_COMPACT_FILTERS` (`1 shl 6`). BIP-157 commands use BIP-324 short IDs 22–27 (`BIP157_SHORT_IDS`).
 
 ```kotlin
-import org.bitcoin.kmp.bip157.encodeOutbound
+import io.bluewallet.bip157.encodeOutbound
 
 for (intent in send) {
     val encoded = encodeOutbound(intent)
