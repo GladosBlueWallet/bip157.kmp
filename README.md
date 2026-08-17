@@ -67,7 +67,7 @@ RPC/explorer block hashes and BIP-158 test vectors use **display order** (byte-r
 - **Sync** — Scripted peer replies in common tests (happy path, mismatch rejection).
 
 ```bash
-./gradlew :library:jvmTest
+./gradlew :bip157:jvmTest
 ```
 
 ## Non-goals
